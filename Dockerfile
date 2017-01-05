@@ -20,7 +20,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14
 	&& apt-get install -y nodejs \
 	&& apt-get install -y npm 
 
-RUN ln -sf ln -sf /usr/bin/nodejs /usr/bin/node
+RUN ln -sf /usr/bin/nodejs /usr/bin/node
 
 RUN git clone https://github.com/rueckstiess/mtools.git
 RUN cd mtools && sed -i '/matplot/d' requirements.txt && pip install -r requirements.txt  && python setup.py install
