@@ -16,7 +16,9 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14
 	&& pip3 install matplotlib \
 	&& pip3 install nose \
 	&& pip3 install pymongo \
-	&& pip3 install psutil
+	&& pip3 install psutil \
+	&& apt-get install -y nodejs \
+	&& apt-get install -y npm 
 
 RUN git clone https://github.com/rueckstiess/mtools.git
 RUN cd mtools && sed -i '/matplot/d' requirements.txt && pip install -r requirements.txt  && python setup.py install
